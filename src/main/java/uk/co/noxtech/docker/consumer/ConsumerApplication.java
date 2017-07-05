@@ -43,8 +43,8 @@ public class ConsumerApplication {
     }
 
     @Bean
-    MessageListenerAdapter listenerAdapter(Receiver receiver) {
-        return new MessageListenerAdapter(receiver, "receiveMessage");
+    MessageListenerAdapter listenerAdapter(ConsumerServiceImpl consumerService) {
+        return new MessageListenerAdapter(consumerService, "consumeMessage");
     }
 
     public static void main(String[] args) throws InterruptedException {
