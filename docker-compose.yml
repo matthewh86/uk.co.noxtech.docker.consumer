@@ -1,0 +1,9 @@
+# consumer
+version: '2'
+
+services:
+  consumer:
+    container_name: noxtech-consumer
+    build: ./build/docker
+    ports:
+      - "8082:8080"

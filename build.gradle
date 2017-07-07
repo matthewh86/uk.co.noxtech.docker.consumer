@@ -1,14 +1,21 @@
 buildscript {
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE")
+        classpath 'se.transmode.gradle:gradle-docker:1.2'
     }
 }
 
+apply plugin: 'application'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'docker'
 
 jar {
     baseName = 'uk.co.noxtech.docker.consumer'
-    version =  '0.1.0'
+    version = '0.1.0'
+}
+
+docker {
+    maintainer 'Matthew Hayward "matthewh86@gmail.com"'
 }
 
 dependencies {
