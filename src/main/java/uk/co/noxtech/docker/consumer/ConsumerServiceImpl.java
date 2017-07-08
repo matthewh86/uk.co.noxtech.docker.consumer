@@ -19,7 +19,7 @@ public class ConsumerServiceImpl implements ConsumerService {
 
     private static final Logger LOGGER = LogManager.getLogger(ConsumerServiceImpl.class);
 
-    private static final Map<Integer, List<Telephone>> consumedTelephones = new ConcurrentHashMap<>();
+    private static Map<Integer, List<Telephone>> consumedTelephones = new ConcurrentHashMap<>();
 
     @Override
     public void consumeMessage(String message) {
@@ -66,6 +66,11 @@ public class ConsumerServiceImpl implements ConsumerService {
         } catch (JsonProcessingException e) {
             return e.toString();
         }
+    }
+
+    @Override
+    public void flushData() {
+        consumedTelephones = new ConcurrentHashMap<>();
     }
 
 }

@@ -7,4 +7,6 @@ public interface ConsumerService {
     String getConsumedTelephoneStatistics();
 
     String getConsumedTelephoneJson();
+
+    void flushData();
 }
