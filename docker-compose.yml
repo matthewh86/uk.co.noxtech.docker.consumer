@@ -3,7 +3,10 @@ version: '2'
 
 services:
   consumer:
+    image: noxtech-consumer
     container_name: noxtech-consumer
     build: ./build/docker
     ports:
       - "8082:8080"
+    environment:
+      - RABBIT_MQ_IP=${RABBIT_MQ_IP}

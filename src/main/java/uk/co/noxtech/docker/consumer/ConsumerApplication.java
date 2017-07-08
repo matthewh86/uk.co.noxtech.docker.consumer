@@ -11,8 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import static uk.co.noxtech.docker.producer.ProducerApplication.EXCHANGE_NAME;
-import static uk.co.noxtech.docker.producer.ProducerApplication.QUEUE_NAME;
+import static uk.co.noxtech.docker.producer.ProducerApplication.*;
 
 @SpringBootApplication
 public class ConsumerApplication {
@@ -48,6 +47,7 @@ public class ConsumerApplication {
     }
 
     public static void main(String[] args) throws InterruptedException {
+        System.getProperties().setProperty(SPRING_RABBIT_MQ_HOST_PROP, System.getenv(RABBIT_MQ_IP));
         SpringApplication.run(ConsumerApplication.class, args);
     }
 
