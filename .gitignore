@@ -2,9 +2,9 @@
 /.idea
 /out
 /build
-uk.co.noxtech.docker.consumer.ipr
-uk.co.noxtech.docker.consumer.iws
-uk.co.noxtech.docker.consumer.iml
+*.ipr
+*.iws
+*.iml
 .classpath
 .project
 .gradle
